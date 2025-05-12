@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="department">
+        <dropForeignKeyConstraint baseTableName="student" constraintName="fk_student_on_department"/>
+    </changeSet>
+    <changeSet id="2" author="department">
+        <dropForeignKeyConstraint baseTableName="teacher_department_link" constraintName="fk_teadep_on_department"/>
+    </changeSet>
+    <changeSet id="3" author="department">
+        <dropForeignKeyConstraint baseTableName="teacher_department_link" constraintName="fk_teadep_on_teacher"/>
+    </changeSet>
+    <changeSet id="4" author="department">
+        <dropTable cascadeConstraints="true" tableName="department"/>
+    </changeSet>
+    <changeSet id="5" author="department">
+        <dropTable cascadeConstraints="true" tableName="student"/>
+    </changeSet>
+    <changeSet id="6" author="department">
+        <dropTable cascadeConstraints="true" tableName="teacher"/>
+    </changeSet>
+    <changeSet id="7" author="department">
+        <dropTable cascadeConstraints="true" tableName="teacher_department_link"/>
+    </changeSet>
+</databaseChangeLog>
